@@ -5,6 +5,7 @@ const TouristInfoCards = () => {
     <div className="cards">
       <div className="card">
         <img
+          alt=""
           src="https://images.pexels.com/photos/3061345/pexels-photo-3061345.jpeg"
           className="card-img-top"
         />
@@ -17,6 +18,7 @@ const TouristInfoCards = () => {
       </div>
       <div className="card">
         <img
+          alt=""
           src="https://images.pexels.com/photos/5212814/pexels-photo-5212814.jpeg"
           className="card-img-top"
         />
@@ -29,6 +31,7 @@ const TouristInfoCards = () => {
       </div>
       <div className="card">
         <img
+          alt=""
           src="https://images.pexels.com/photos/460672/pexels-photo-460672.jpeg"
           className="card-img-top"
         />

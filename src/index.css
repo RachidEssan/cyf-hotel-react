@@ -56,3 +56,7 @@ header {
   flex-direction: column;
   align-items: center;
 }
+
+.highlight {
+  background-color: antiquewhite;
+}

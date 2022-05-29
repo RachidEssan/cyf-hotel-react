@@ -60,3 +60,11 @@ header {
 .highlight {
   background-color: antiquewhite;
 }
+
+.orders {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+  width: 30%;
+}

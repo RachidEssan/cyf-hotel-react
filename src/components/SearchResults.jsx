@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import Row from "./Row";
 
 function SearchResults(prop) {
   return (
     <div>
-      <table class="table">
+      <table className="table">
         <thead>
           <tr>
             <th scope="col">Id</th>

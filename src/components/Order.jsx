@@ -6,9 +6,8 @@ const Order = prop => {
   const orderOne = () => {
     setOrders(orders + 1);
   };
-  const orderType = "Pizzas";
   return (
-    <li>
+    <li className="orders">
       {prop.orderType}: {orders} <RestaurantButton addOne={orderOne} />
     </li>
   );

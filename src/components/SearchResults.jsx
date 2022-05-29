@@ -20,7 +20,7 @@ function SearchResults(prop) {
         </thead>
         <tbody>
           {prop.results.map(data => {
-            return <Row data={data} />;
+            return <Row key={data.id} data={data} />;
           })}
         </tbody>
       </table>

@@ -4,6 +4,7 @@ import SearchButton from "./SearchButton";
 const Search = props => {
   const [searchInput, setSearchInput] = useState("");
   const handleSearchInput = event => {
+    event.preventDefault();
     setSearchInput(event.target.value);
   };
   const handleSubmit = event => {

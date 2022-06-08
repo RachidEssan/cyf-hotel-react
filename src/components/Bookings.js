@@ -7,8 +7,8 @@ const Bookings = () => {
   const search = searchVal => {
     const filteredbookings = bookings.filter(
       client =>
-        client.firstName.toLowerCase().includes(searchVal) ||
-        client.surname.toLowerCase().includes(searchVal)
+        client.firstName.includes(searchVal) ||
+        client.surname.includes(searchVal)
     );
     setBookings(filteredbookings);
   };

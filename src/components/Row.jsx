@@ -20,6 +20,11 @@ const Row = ({ data }) => {
       <th>{data.checkInDate}</th>
       <th>{data.checkOutDate}</th>
       <th>{checkOut.diff(checkIn, "days")}</th>
+      <th>
+        <button className="btn btn-primary" onClick={data.customerId()}>
+          Show profile
+        </button>
+      </th>
     </tr>
   );
 };

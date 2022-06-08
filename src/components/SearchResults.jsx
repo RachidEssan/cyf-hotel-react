@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import Row from "./Row";
+import CustomerProfile from "./CustomerProfile";
 
 function SearchResults(prop) {
+  const [customerId, setCustomerId] = useState();
   return (
     <div>
       <table className="table">
@@ -16,14 +18,18 @@ function SearchResults(prop) {
             <th scope="col">Check In Date</th>
             <th scope="col">Check Out Date</th>
             <th scope="col">Number of Nights</th>
+            <th scope="col">Profile</th>
           </tr>
         </thead>
         <tbody>
           {prop.results.map(data => {
-            return <Row key={data.id} data={data} />;
+            return (
+              <Row key={data.id} customerId={setCustomerId()} data={data} />
+            );
           })}
         </tbody>
       </table>
+      <CustomerProfile id={customerId} />
     </div>
   );
 }

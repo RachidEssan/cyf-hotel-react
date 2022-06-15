@@ -21,10 +21,12 @@ const Bookings = () => {
 
   return (
     <div className="App-content">
-      <div className="container">
-        <Search search={search} />
-        {<SearchResults results={bookings} />}
-      </div>
+      {bookings.length > 0 ? (
+        <div className="container">
+          <Search search={search} />
+          {<SearchResults results={bookings} />}
+        </div>
+      ) : null}
     </div>
   );
 };

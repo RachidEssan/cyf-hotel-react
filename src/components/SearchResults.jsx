@@ -3,7 +3,7 @@ import Row from "./Row";
 import CustomerProfile from "./CustomerProfile";
 
 function SearchResults(prop) {
-  const [customerId, setCustomerId] = useState();
+  const [customerId, setCustomerId] = useState(0);
   return (
     <div>
       <table className="table">
@@ -23,9 +23,7 @@ function SearchResults(prop) {
         </thead>
         <tbody>
           {prop.results.map(data => {
-            return (
-              <Row key={data.id} customerId={setCustomerId()} data={data} />
-            );
+            return <Row key={data.id} customerId={setCustomerId} data={data} />;
           })}
         </tbody>
       </table>

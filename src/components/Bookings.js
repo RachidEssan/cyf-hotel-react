@@ -17,7 +17,12 @@ const Bookings = () => {
 
   useEffect(() => {
     fetch("https://cyf-react.glitch.me/delayed")
-      .then(response => response.json())
+      .then(response => {
+        if (response.status != 200) {
+          alert("Error! Unable to load data.");
+        }
+        return response.json();
+      })
       .then(response => {
         setBookings(response);
         setLoading(false);

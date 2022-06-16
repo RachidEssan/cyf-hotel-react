@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 const CustomerProfile = ({ id }) => {
-  const [customerData, setCustomerData] = useState(null);
+  const [customerData, setCustomerData] = useState({});
   useEffect(() => {
     fetch(`https://cyf-react.glitch.me/customers/${id}`)
       .then(response => response.json())
@@ -10,11 +10,13 @@ const CustomerProfile = ({ id }) => {
 
   return (
     <div>
-      {id && customerData
-        ? `Customer profile number ${customerData.id} Email: ${
-            customerData.email
-          } Phone number: ${customerData.phoneNumber} VIP: ${customerData.vip}`
-        : ""}
+      <ul>
+        <li>{`Customer id: ${customerData.id}`}</li>
+        <li>{`Name: ${customerData.firstName}`}</li>
+        <li>{`Email: ${customerData.email}`}</li>
+        <li>{`Phone Number: ${customerData.phoneNumber}`}</li>
+        <li>{`VIP: ${customerData.vip ? "Yes" : "No"}`}</li>
+      </ul>
     </div>
   );
 };

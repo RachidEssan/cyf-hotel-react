@@ -4,6 +4,8 @@ import SearchResults from "./SearchResults";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
+  const [loading, setLoading] = useState(true);
+
   const search = searchVal => {
     const filteredbookings = bookings.filter(
       client =>
@@ -14,19 +16,24 @@ const Bookings = () => {
   };
 
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me")
+    fetch("https://cyf-react.glitch.me/delayed")
       .then(response => response.json())
-      .then(response => setBookings(response));
+      .then(response => {
+        setBookings(response);
+        setLoading(false);
+      });
   }, []);
 
   return (
     <div className="App-content">
-      {bookings.length > 0 ? (
-        <div className="container">
-          <Search search={search} />
-          {<SearchResults results={bookings} />}
-        </div>
-      ) : null}
+      <div className="container">
+        <Search search={search} />
+        {!loading ? (
+          <SearchResults results={bookings} />
+        ) : (
+          <h3 className="loading-message">Loading... Please wait.</h3>
+        )}
+      </div>
     </div>
   );
 };

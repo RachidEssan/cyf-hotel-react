@@ -68,3 +68,8 @@ header {
   margin-bottom: 5px;
   width: 30%;
 }
+
+.loading-message {
+  text-align: center;
+  padding: 20px;
+}

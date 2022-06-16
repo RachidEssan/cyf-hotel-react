@@ -5,12 +5,14 @@ const Row = props => {
   let checkIn = moment(props.data.checkInDate);
   let checkOut = moment(props.data.checkOutDate);
   const [highlighted, sethighlighted] = useState(false);
-  const highlightRow = () => {
-    sethighlighted(!highlighted);
-  };
 
   return (
-    <tr className={highlighted ? "highlight" : ""} onClick={highlightRow}>
+    <tr
+      className={highlighted ? "highlight" : ""}
+      onClick={() => {
+        sethighlighted(!highlighted);
+      }}
+    >
       <th>{props.data.id}</th>
       <th>{props.data.title}</th>
       <th>{props.data.firstName}</th>
@@ -23,7 +25,7 @@ const Row = props => {
       <th>
         <button
           className="btn btn-primary"
-          onClick={props.customerId(props.data.id)}
+          onClick={() => props.customerId(props.data.id)}
         >
           Show Profile
         </button>
